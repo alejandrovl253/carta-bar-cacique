@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAR CACIQUE - Carta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="top-nav" aria-label="Navegación de la carta">
+    <a href="#raciones">Raciones</a>
+    <a href="#hamburguesas">Hamburguesas</a>
+    <a href="#bocadillos">Bocadillos</a>
+  </nav>
+
+  <main class="menu-page">
+    <header class="menu-header">
+      <h1>BAR CACIQUE</h1>
+      <address>AVENIDA DE LA CONSTITUCIÓN 7, EL ESCORIAL</address>
+    </header>
+
+    <section class="menu-section raciones-section" id="raciones">
+      <h2>RACIONES</h2>
+      <ul class="menu-list">
+        <li><span class="item-name">Patatas bravas</span><span class="dots"></span><span class="price">8 €</span></li>
+        <li><span class="item-name">Chorizo frito</span><span class="dots"></span><span class="price">8 €</span></li>
+        <li><span class="item-name">Ensaladilla rusa</span><span class="dots"></span><span class="price">8 €</span></li>
+        <li><span class="item-name">Huevos rotos con jamón</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Huevos rotos con chorizo</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Boquerones fritos</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Boquerones en vinagre</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Alitas de pollo</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Escalope de pollo</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Morcilla de Burgos</span><span class="dots"></span><span class="price">10 €</span></li>
+        <li><span class="item-name">Croquetas de jamón</span><span class="dots"></span><span class="price">11 €</span></li>
+        <li><span class="item-name">Croquetas de queso roquefort</span><span class="dots"></span><span class="price">11 €</span></li>
+        <li><span class="item-name">Fingers de pollo</span><span class="dots"></span><span class="price">12 €</span></li>
+        <li><span class="item-name">Ensalada de ventresca y tomate</span><span class="dots"></span><span class="price">12 €</span></li>
+        <li><span class="item-name">Calamares a la romana</span><span class="dots"></span><span class="price">13 €</span></li>
+        <li><span class="item-name">Cachopo de ternera</span><span class="dots"></span><span class="price">15 €</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <main class="menu-page">
+    <header class="menu-header">
+      <h1>BAR CACIQUE</h1>
+      <address>AVENIDA DE LA CONSTITUCIÓN 7, EL ESCORIAL</address>
+    </header>
+
+    <section class="menu-section" id="hamburguesas">
+      <h2>HAMBURGUESAS</h2>
+      <ul class="menu-list">
+        <li><span class="item-name">Hamburguesa clásica; carne, jamón york, queso, lechuga, cebolla y tomate</span><span class="dots"></span><span class="price">8 €</span></li>
+        <li><span class="item-name">Hamburguesa especial; carne, jamón, queso, huevo, lechuga, cebolla y tomate</span><span class="dots"></span><span class="price">10 €</span></li>
+      </ul>
+    </section>
+
+    <section class="menu-section" id="bocadillos">
+      <h2>BOCADILLOS</h2>
+
+      <div class="shared-price-block">
+        <ul class="shared-items">
+          <li>Jamón</li>
+          <li>Queso manchego</li>
+          <li>Chorizo o salchichón</li>
+          <li>Chorizo frito</li>
+          <li>Morcilla de Burgos</li>
+          <li>Beicon</li>
+          <li>Cinta de lomo</li>
+        </ul>
+        <div class="shared-price">4,5 €</div>
+      </div>
+
+      <div class="supplement">*Suplemento queso* <strong>+0,50 €</strong></div>
+
+      <ul class="menu-list">
+        <li><span class="item-name">Pepito de ternera</span><span class="dots"></span><span class="price">7 €</span></li>
+        <li><span class="item-name">Calamares</span><span class="dots"></span><span class="price">6 €</span></li>
+        <li><span class="item-name">Sándwich mixto</span><span class="dots"></span><span class="price">4 €</span></li>
+        <li><span class="item-name">Sándwich mixto con huevo</span><span class="dots"></span><span class="price">4,5 €</span></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #efefef;
+  color: #111;
+  font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+}
+
+body {
+  padding: 14px 0;
+}
+
+.top-nav {
+  display: none;
+}
+
+.menu-page {
+  width: 148mm;
+  height: 210mm;
+  margin: 0 auto 12px;
+  padding: 10mm;
+  background: #fff;
+  border: 1px solid #111;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  position: relative;
+  page-break-after: always;
+}
+
+.menu-page::before {
+  content: "";
+  position: absolute;
+  inset: 4mm;
+  border: 1px solid #111;
+  pointer-events: none;
+}
+
+.menu-header {
+  margin: 0 0 8mm;
+  padding: 5mm 3mm 4mm;
+  text-align: center;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  position: relative;
+}
+
+.menu-header h1 {
+  margin: 0;
+  font-size: 31pt;
+  line-height: 0.94;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.menu-header address {
+  margin: 2.6mm 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  line-height: 1.15;
+  font-style: normal;
+  letter-spacing: 0.4pt;
+  text-transform: uppercase;
+}
+
+.menu-section {
+  margin-top: 7mm;
+  position: relative;
+}
+
+.menu-section:first-of-type {
+  margin-top: 0;
+}
+
+.menu-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 3mm;
+  margin: 0 0 5mm;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1.4pt;
+  text-align: center;
+}
+
+.menu-section h2::before,
+.menu-section h2::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  height: 2px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(10mm, 1fr) 16mm;
+  align-items: baseline;
+  column-gap: 1.8mm;
+  margin: 0 0 3mm;
+  font-size: 12pt;
+  line-height: 1.16;
+}
+
+.raciones-section .menu-list li {
+  margin-bottom: 4.1mm;
+  font-size: 12.8pt;
+}
+
+.item-name {
+  min-width: 0;
+}
+
+.dots {
+  width: 100%;
+  border-bottom: 1px dotted #777;
+  transform: translateY(-1.6pt);
+}
+
+.price {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.6pt;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.shared-price-block {
+  display: grid;
+  grid-template-columns: 1fr 23mm;
+  column-gap: 4mm;
+  align-items: center;
+  margin: 0 0 4mm;
+  padding: 0 0 3mm;
+  border-bottom: 1px solid #111;
+}
+
+.shared-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8mm;
+  row-gap: 2.2mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 12pt;
+  line-height: 1.15;
+}
+
+.shared-price {
+  justify-self: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13pt;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.supplement {
+  margin: 0 0 5mm;
+  padding-right: 2mm;
+  font-size: 11pt;
+  font-style: italic;
+  text-align: right;
+}
+
+.supplement strong {
+  margin-left: 4mm;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.2pt;
+  font-style: normal;
+}
+
+@page {
+  size: A5 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 148mm;
+    height: 210mm;
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .top-nav {
+    display: none;
+  }
+
+  .menu-page {
+    width: 148mm;
+    height: 210mm;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .menu-page:last-child {
+    page-break-after: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    padding: 0;
+    background: #fff;
+  }
+
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    padding: 0;
+    background: #111;
+    border-bottom: 1px solid #111;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .top-nav a {
+    display: block;
+    padding: 13px 8px 12px;
+    background: #fff;
+    color: #111;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .menu-page {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 22px 18px 30px;
+    border: 0;
+    border-bottom: 1px solid #111;
+    box-shadow: none;
+    page-break-after: auto;
+  }
+
+  .menu-page::before {
+    display: none;
+  }
+
+  .menu-header {
+    margin-bottom: 28px;
+    padding: 20px 0 18px;
+  }
+
+  .menu-header h1 {
+    font-size: 38px;
+    line-height: 0.95;
+  }
+
+  .menu-header address {
+    margin-top: 12px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  .menu-section {
+    scroll-margin-top: 58px;
+    margin-top: 32px;
+  }
+
+  .menu-section:first-of-type {
+    margin-top: 0;
+  }
+
+  .menu-section h2 {
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .menu-list li,
+  .raciones-section .menu-list li {
+    grid-template-columns: minmax(0, auto) minmax(20px, 1fr) minmax(48px, auto);
+    column-gap: 8px;
+    margin-bottom: 15px;
+    font-size: 17px;
+    line-height: 1.22;
+  }
+
+  .dots {
+    transform: translateY(-4px);
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .shared-price-block {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+  }
+
+  .shared-items {
+    grid-template-columns: 1fr;
+    row-gap: 11px;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .shared-price {
+    justify-self: end;
+    padding: 6px 0 0;
+    font-size: 17px;
+  }
+
+  .supplement {
+    margin-bottom: 24px;
+    padding-right: 0;
+    font-size: 16px;
+    text-align: right;
+  }
+
+  .supplement strong {
+    margin-left: 8px;
+    font-size: 15px;
+  }
+}

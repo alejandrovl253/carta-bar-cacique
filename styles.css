@@ -6,6 +6,7 @@ html,
 body {
   margin: 0;
   min-height: 100%;
+  overflow-x: hidden;
   background: #efefef;
   color: #111;
   font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
@@ -220,12 +221,13 @@ body {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 820px) {
   html {
     scroll-behavior: smooth;
   }
 
   body {
+    width: 100%;
     padding: 0;
     background: #fff;
   }
@@ -234,9 +236,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    width: 100%;
     padding: 0;
     background: #111;
     border-bottom: 1px solid #111;
@@ -244,25 +247,32 @@ body {
   }
 
   .top-nav a {
-    display: block;
-    padding: 13px 8px 12px;
+    flex: 1 1 33.333%;
+    min-width: 106px;
+    padding: 13px 6px 12px;
     background: #fff;
+    border-right: 1px solid #111;
     color: #111;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
+  }
+
+  .top-nav a:last-child {
+    border-right: 0;
   }
 
   .menu-page {
     width: 100%;
+    max-width: none;
     height: auto;
     min-height: 0;
     margin: 0;
-    padding: 22px 18px 30px;
+    padding: 22px 16px 30px;
     border: 0;
     border-bottom: 1px solid #111;
     box-shadow: none;
@@ -278,9 +288,14 @@ body {
     padding: 20px 0 18px;
   }
 
+  .mobile-hidden-header {
+    display: none;
+  }
+
   .menu-header h1 {
-    font-size: 38px;
+    font-size: 34px;
     line-height: 0.95;
+    overflow-wrap: anywhere;
   }
 
   .menu-header address {
@@ -290,8 +305,9 @@ body {
   }
 
   .menu-section {
-    scroll-margin-top: 58px;
+    scroll-margin-top: 62px;
     margin-top: 32px;
+    width: 100%;
   }
 
   .menu-section:first-of-type {
@@ -307,19 +323,28 @@ body {
 
   .menu-list li,
   .raciones-section .menu-list li {
-    grid-template-columns: minmax(0, auto) minmax(20px, 1fr) minmax(48px, auto);
-    column-gap: 8px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
     margin-bottom: 15px;
     font-size: 17px;
     line-height: 1.22;
   }
 
+  .item-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
   .dots {
-    transform: translateY(-4px);
+    display: none;
   }
 
   .price {
+    align-self: start;
+    min-width: 46px;
     font-size: 15px;
+    line-height: 1.22;
   }
 
   .shared-price-block {
@@ -334,6 +359,11 @@ body {
     row-gap: 11px;
     font-size: 17px;
     line-height: 1.2;
+    min-width: 0;
+  }
+
+  .shared-items li {
+    overflow-wrap: anywhere;
   }
 
   .shared-price {
@@ -352,5 +382,32 @@ body {
   .supplement strong {
     margin-left: 8px;
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .top-nav a {
+    flex-basis: 100%;
+    border-right: 0;
+    border-bottom: 1px solid #111;
+  }
+
+  .menu-page {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .menu-header h1 {
+    font-size: 30px;
+  }
+
+  .menu-list li,
+  .raciones-section .menu-list li {
+    font-size: 16px;
+  }
+
+  .price {
+    min-width: 42px;
+    font-size: 14px;
   }
 }
